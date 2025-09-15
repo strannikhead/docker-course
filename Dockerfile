@@ -1,8 +1,8 @@
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS dotnet
 WORKDIR /src
 COPY WebApp/ ./WebApp/
-RUN dotnet restore
 WORKDIR /src/WebApp
+RUN dotnet restore
 RUN dotnet build -c Release -o /app/build
 RUN dotnet publish -c Release -o /app/publish
 
